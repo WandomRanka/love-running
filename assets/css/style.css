@@ -35,6 +35,27 @@ header a {text-decoration: none;
       text-transform: uppercase;
       letter-spacing:2px;
       color: #252525}
+      
+  #menu {font-size: 110%;
+        letter-spacing: 4px;
+        list-style: none;}
+
+        #menu > li {
+          margin-bottom: 1em;
+
+        }
+
+        .active {border-bottom: 1px solid #3a3a3a;}
+        /* Navbar style with dropdown toggle */
+        #nav { 
+          position: absolute;
+          background-color: #ffffff;
+          width:100%
+          margin: 0;
+          padding:0 1rem;
+          box-shadow: 0 2px 2px #3a3a3a;
+        }
+
 
 /* Main Content*/
 main {
@@ -44,5 +65,6 @@ main {
 
 
 }
+
 /* Footer*/
 footer {background-color: orange;}
