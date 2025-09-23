@@ -18,9 +18,12 @@ body {
 header {background-color: #ffffff;
   padding: 0 1rem;
   position: fixed;
-  z-index: 99:
+  z-index: 99;
   width: 100%;
   box-shadow: 0 2px 2px #3a3a3a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
 }
 
@@ -47,14 +50,26 @@ header a {text-decoration: none;
 
         .active {border-bottom: 1px solid #3a3a3a;}
         /* Navbar style with dropdown toggle */
-        #nav { 
+          nav { 
           position: absolute;
           background-color: #ffffff;
-          width:100%
-          margin: 0;
-          padding:0 1rem;
+          width:100%;
+          left: 0;
+          padding: 0 1rem;
           box-shadow: 0 2px 2px #3a3a3a;
+          display: none;
+          top: 100%;
         }
+
+        /*Nav Toggle*/
+        #nav-toggle:checked~nav{
+          display: block;
+        }
+        #nav-toggle{
+          display:none
+        
+        }
+        .nav-toggle-label{font-size: 2rem;} 
 
 
 /* Main Content*/
@@ -62,9 +77,46 @@ main {
   background-color: lightblue;
   /* Make sure element takes up space to push footer down*/
   flex: 1 0 auto;
-
-
+  margin-top:47px;
 }
 
+/* Large devices (laptop and desktop, 992px and up)*/
+@media screen and (min-width:992px) 
+{#menu a:hover{border-bottom: 1px solid #3a3a3a;
+}
+  .nav-toggle-label{display:none;}
+  nav {display:block !important;
+    position: static;
+    box-shadow: none;
+    width: fit-content;
+    padding: 0;
+  }
+}
 /* Footer*/
 footer {background-color: orange;}
+
+
+
+/*Media query: tablets and larger (767px and up)*/
+@media screen and (min-width:768px) {
+  /*Header*/
+  nav 
+    display: block;
+    position: relative;
+    box-shadow: none;
+    width: fit-content;
+    padding-right: 1rem;
+
+}
+  #menu{  display: flex;
+    gap: 2rem;}
+#menu > li {
+ padding-left: 1rem;}
+  #logo {font-size: 280%;
+  line-height:75px
+ margin: 0 0.5rem }
+ /*main content*/
+ main {
+  /*Push main onrent down to accomodate larger header*/
+  margin-top:75px;
+ }
